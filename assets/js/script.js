@@ -15,25 +15,27 @@
 
 //plan of attack:
 
-//*use dayjs for this*
-//header set date for top of page
+//1.
+//header set date for top of page *use dayjs for this*
     //function for setting time and day
-        //appends date to current day ID paragraph
+        //appends date to current day ID paragraph *using jquery*
 
-//*use jquery for this*
-//code for creating and appending timeblocks for hours
-    //function sets class for if is past, present, or future using dayjs
-        //criteria for color change is past, present, future
+//2.
+//code for creating and appending timeblocks for hours *use jquery for this*
+    //function sets class for if is past, present, or future *using dayjs and jquery*
+        //criteria for color change is past, present, future *using jquery*
+        //sets color of block by class *using jquery*
+        //sets class to have css attribute of colour *using jquery*
 
-//*use local storage get for this*
-//code for retrieving local storage of text in timeblocks
-    //makes text in block appear from local storage
+//3.
+//code for retrieving local storage of text in timeblocks *use local storage get for this*
+    //makes text in block appear from local storage *using jquery*
 
-//*use jquery for this*
-//click event for each block when clicked can write
+//4.
+//click event for each block when clicked can write *use jquery for this*
 
-//*use local storage get and set for this*
-//click event for save button when clicked can save text in block to local storage
+//5.
+//click event for save button when clicked can save text in block to local storage *use local storage get and set for this*
 
 // ---------------------------------//
 // ---------------------------------//
