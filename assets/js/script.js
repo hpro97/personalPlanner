@@ -18,14 +18,13 @@
 //1.
 //header set date for top of page *use dayjs for this*
     //function for setting time and day
-        //appends date to current day ID paragraph *using jquery*
+        //appends.text date to #current day <p> *using jquery*
 
 //2.
 //code for creating and appending timeblocks for hours *use jquery for this*
     //function sets class for if is past, present, or future *using dayjs and jquery*
-        //criteria for color change is past, present, future *using jquery*
-        //sets color of block by class *using jquery*
-        //sets class to have css attribute of colour *using jquery*
+        //if statement for color change is past, present, future *using jquery*
+        //sets color of block by class *using jquery* .past/present/future
 
 //3.
 //code for retrieving local storage of text in timeblocks *use local storage get for this*
