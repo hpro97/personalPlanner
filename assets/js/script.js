@@ -42,21 +42,18 @@
 // ---------------------------------//
 //queryselectors for all//
 // ---------------------------------//
-currentDayEl = $("#currentDay") //span displays current date
-containerEl = $(".container") //div dispalys container for timeblocks
+let currentDayEl = $("#currentDay") //span displays current date
+let containerEl = $(".container") //div dispalys container for timeblocks
 
 // ---------------------------------//
 // ---------------------------------//
 
 // ---------------------------------//
-//define initial variables that change through app//
+//define initial variables//
 // ---------------------------------//
 let hours = [
     07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18,
 ]
-
-
-
 
 // ---------------------------------//
 // ---------------------------------//
@@ -64,10 +61,7 @@ let hours = [
 // ---------------------------------//
 //convenience variables//
 // ---------------------------------//
-
-let currentDay = dayjs();
-
-
+let currentDay = dayjs(); //using day js library to set current day with funciton
 
 // ---------------------------------//
 // ---------------------------------//
@@ -90,8 +84,8 @@ function createTimeBlocks() {
     //if statement for color change is past, present, future
     //sets color of block by class
     //append timeblocks to container
-    for (let i = 0; i <= hours.length -1; i++) {
-        const block = 
+    for (let i = 0; i <= hours.length -1; i++) { //initiate for loop in hours array
+        const block = //indiviul const for each block
         $(`<form>
             <div class='row time-block'>
                 <div class='col-md-2 hour'>
@@ -105,6 +99,15 @@ function createTimeBlocks() {
             </div>
         </form>
         `);
+
+        //form for each block, creates row, in row creates col for hour, textarea for description, and button for save
+        //creates column occupying 2 spaces of the 12, assigns hour class
+        //outs current hour from for loop to textarea
+        //text input for later use as class and name
+        //type submit for click event
+        //<i class='fas fa-save'></i> for icon with floppy disk icon
+
+        //append block to container
         containerEl.append(block);
         
     }
@@ -112,13 +115,13 @@ function createTimeBlocks() {
 
 function assignColor() {
     //color code grey done, red current, green future
-    $(".time-block").each(function(i, block) {
-        if (hours[i] < currentDay.hour()) {
-            $(this).addClass("past");
-        } else if (hours[i] === currentDay.hour()) {
-            $(this).addClass("present");
-        } else if (hours[i] > currentDay.hour()) {
-            $(this).addClass("future");
+    $(".time-block").each(function(i, block) { //selects all elements with class time-block, goes over each with .each, takes index of hours array and block from previous creation
+        if (hours[i] < currentDay.hour()) { //checkks if index is less than current hour
+            $(this).addClass("past"); //takes "this" element, in this case the block, and adds class, changing color
+        } else if (hours[i] === currentDay.hour()) { //same logic as above
+            $(this).addClass("present"); //same logic as above
+        } else if (hours[i] > currentDay.hour()) { //same logic as above
+            $(this).addClass("future"); //same logic as above
         }
     })
 }
@@ -129,6 +132,9 @@ function assignColor() {
 
 // ---------------------------------//
 //click events
+// ---------------------------------//
+// ---------------------------------//
+//local storage
 // ---------------------------------//
 
 $(document).on("submit", "form", function(bananaLULZ) { //note to self bananaLULZ could be anything, intuitively submit would be ideal, but to remember it can be anything, i've set to bananaLULZ 🍌
@@ -149,23 +155,21 @@ $(document).on("submit", "form", function(bananaLULZ) { //note to self bananaLUL
     console.log(textInput, hourForLocalStorage);
 });
 
+function assignStoredText() {
+    const timeBlocks = $(".time-block");
+    for (let i = 0; i < timeBlocks.length; i++) {
+        const hour = $(timeBlocks[i]).find(".hour").text();
+        const storedText = localStorage.getItem("savedData " + hour);
+        const textarea = $(timeBlocks[i]).find("textarea[name='textInput']");
+        textarea.val(storedText);
+    }
+}
 
 
 // ---------------------------------//
 // ---------------------------------//
 
 setDay();
-createTimeBlocks()
+createTimeBlocks();
 assignColor();
-
-// ---------------------------------//
-//local storage
-// ---------------------------------//
-
-// document.getElementById(textInput).value = localStorage.getItem(textInput);
-
-
-
-
-// ---------------------------------//
-// ---------------------------------//
+assignStoredText();
