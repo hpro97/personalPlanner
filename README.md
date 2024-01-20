@@ -1,31 +1,38 @@
-# challenge6QuizzHarryProbert
-this is a quick and fun quiz with javascript functionality
+# Challenge 7 Personal Planner - Harry Probert
 
-## Description 
+A basic personal planner for business hours.
 
-I built this project to showcase what I've learned in class recently like ternary statements, local storage, append, and timers alongside everything else I've previously learned. I created a functioning quiz that keeps track of your score, lets you input initials, and keeps track of this on the leaderboard, it also allows you to clear the local history on the leaderboard. I checked for full functionality after completing each requisite provided to me and debugged as necessary whilst adding comments to facilitate readability and clarification of how my code works. I condensed my code by assigning functions and calling as and when necessary.
+## Description
+
+I built this project to implement new technologies I've learned, such as using libraries like jQuery UI, jQuery, jsDate, and to refresh my memory on Bootstrap and HTML creation, among other things. The personal planner allows you to organize your day by displaying the current date and using color coordination to indicate whether a time block is in the past, present, or future. It also enables you to keep a local history so that it persists upon refresh throughout the day. I ensured full functionality after completing each requisite provided to me, debugging as necessary and adding comments for readability and clarification of how my code works. I condensed my code by assigning functions and calling them as necessary.
 
 ## Table of Contents
 
 * [Credits](#credits)
 * [License](#license)
 * [Link](#link)
-* [Screenshot](#Screenshot)
+* [Screenshot](#screenshot)
 
-## Link:
-DEPLOYED: https://hpro97.github.io/challenge6QuizzHarryProbert/<br>
-GIT REPO: https://github.com/hpro97/challenge6QuizzHarryProbert<br>
-GIT JS FILE: https://github.com/hpro97/challenge6QuizzHarryProbert/tree/main/assets/js<br>
+## Links
+
+* **Deployed:** [Personal Planner](https://hpro97.github.io/challenge7PersonalPlannerHarryProbert/)
+* **GitHub Repo:** [Challenge 7 Personal Planner](https://github.com/hpro97/challenge7PersonalPlannerHarryProbert)
+* **JavaScript File:** [assets/js](https://github.com/hpro97/challenge7PersonalPlannerHarryProbert/tree/main/assets/js)
 
 ## Screenshot
 
-![screenshot of deployed page](/assets/screenshot.png)
+![Screenshot of Deployed Page](/assets/images/screenshot.png)
 
 ## Credits
 
-Stackoverflow for reference to similar projects when encountering problems, clarification on coding questions and examples of code.<br>
-EdX bootcamp AI for clarification on certain Javascript elements and reference for how to create certain working functions, ternary functions clarification, examples of similar structures of code and help debugging my code<br>
-w3school for clarification on javascript functions, ternary opperators, local storage examples and code syntax structure<br>
+I would like to acknowledge the following resources:
+
+* **Stack Overflow:** Reference to similar projects, problem-solving, and clarification on coding questions.
+* **EdX Bootcamp AI:** Clarification on certain JavaScript elements, reference for creating working functions, examples of similar code structures, and help with debugging.
+* **W3Schools:** Clarification on JavaScript functions, local storage examples, and code syntax structure.
+* **DayJs:** Documentation on usage.
+* **Bootstrap:** Documentation on example forms and clarification.
+* **jQuery:** Clarification on correct usage and guidance on architectural aspects to facilitate my code.
 
 ## License
 
