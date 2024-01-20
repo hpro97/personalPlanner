@@ -17,7 +17,7 @@
 
 //1.
 //header set date for top of page *use dayjs for this*
-    //function for setting time and day
+    //function for setting day
         //appends.text date to #current day <p> *using jquery*
 
 //2.
@@ -42,10 +42,8 @@
 // ---------------------------------//
 //queryselectors for all//
 // ---------------------------------//
-
-
-
-
+currentDayEl = $("#currentDay") //span displays current date
+containerEl = $(".container") //div dispalys container for timeblocks
 
 // ---------------------------------//
 // ---------------------------------//
@@ -65,7 +63,7 @@
 //convenience variables//
 // ---------------------------------//
 
-
+currentDay = dayjs()
 
 
 
@@ -87,10 +85,21 @@
 // ---------------------------------//
 //functions i think i'll need
 // ---------------------------------//
+function setDay() {
+    //set current day in header
+    //use dayjs for this
+    //append current day to header
+$("#currentDay").text(currentDay.format("dddd d MMMM YYYY"));
+}
 
-
-
-
+function createTimeBlocks() {
+    //create timeblocks for business hours
+    //use jquery for this
+    //set class for if is past, present, or future
+    //if statement for color change is past, present, future
+    //sets color of block by class
+    //append timeblocks to container
+}
 
 
 // ---------------------------------//
@@ -106,3 +115,5 @@
 
 // ---------------------------------//
 // ---------------------------------//
+
+setDay();
