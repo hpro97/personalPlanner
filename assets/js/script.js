@@ -65,19 +65,7 @@ let hours = [
 //convenience variables//
 // ---------------------------------//
 
-currentDay = dayjs()
-
-
-
-// ---------------------------------//
-// ---------------------------------//
-
-
-// ---------------------------------//
-//local storage
-// ---------------------------------//
-
-
+let currentDay = dayjs();
 
 
 
@@ -109,9 +97,9 @@ function createTimeBlocks() {
                 <div class='col-md-2 hour'>
                     ${hours[i]}:00
                 </div>
-                <textarea class='col-md-8 description'>
+                <textarea class='col-md-8 description textInput' name='textInput'>
                 </textarea>
-                <button class='col-md-2 saveBtn'>
+                <button class='col-md-2 saveBtn' type='submit'>
                 <i class='fas fa-save'></i>
                 </button>
             </div>
@@ -143,7 +131,14 @@ function assignColor() {
 //click events
 // ---------------------------------//
 
-
+$(document).on("submit", "form", function(bananaLULZ) { //note to self bananaLULZ could be anything, intuitively submit would be ideal, but to remember it can be anything, i've set to bananaLULZ 🍌
+    bananaLULZ.preventDefault();
+    //save text of #textInput to local storage for each timeblock
+    let textInput = $(bananaLULZ.target).find("textarea[name='textInput']").val().trim();
+    let hourForLocalStorage = $(bananaLULZ.target).find(".hour").text().trim();
+    console.log(textInput, hourForLocalStorage);
+    localStorage.setItem(`savedData ${hourForLocalStorage}`, textInput);
+} );
 
 
 
@@ -153,3 +148,15 @@ function assignColor() {
 setDay();
 createTimeBlocks()
 assignColor();
+
+// ---------------------------------//
+//local storage
+// ---------------------------------//
+
+// document.getElementById(textInput).value = localStorage.getItem(textInput);
+
+
+
+
+// ---------------------------------//
+// ---------------------------------//
