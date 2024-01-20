@@ -135,10 +135,19 @@ $(document).on("submit", "form", function(bananaLULZ) { //note to self bananaLUL
     bananaLULZ.preventDefault();
     //save text of #textInput to local storage for each timeblock
     let textInput = $(bananaLULZ.target).find("textarea[name='textInput']").val().trim();
-    let hourForLocalStorage = $(bananaLULZ.target).find(".hour").text().trim();
+    let hourForLocalStorage = $(bananaLULZ.target).find(".hour").text();
+    //check if there is already data for this hour in local storage
+    let existingData = localStorage.getItem(`savedData ${hourForLocalStorage}`);
+        //f there is existing data
+        if (existingData) {
+            //updte existing data
+            localStorage.setItem(`savedData ${hourForLocalStorage}`, textInput);
+        } else {
+            //set new value
+            localStorage.setItem(`savedData ${hourForLocalStorage}`, textInput);
+        }
     console.log(textInput, hourForLocalStorage);
-    localStorage.setItem(`savedData ${hourForLocalStorage}`, textInput);
-} );
+});
 
 
 
