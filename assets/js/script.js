@@ -51,7 +51,9 @@ containerEl = $(".container") //div dispalys container for timeblocks
 // ---------------------------------//
 //define initial variables that change through app//
 // ---------------------------------//
-
+let hours = [
+    07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18
+]
 
 
 
@@ -100,6 +102,24 @@ function createTimeBlocks() {
     //if statement for color change is past, present, future
     //sets color of block by class
     //append timeblocks to container
+    for (let i = 0; i <= hours.length -1; i++) {
+        const block = 
+        $(`<form>
+            <div class='row time-block'>
+                <div class='col-md-2 hour'>
+                    ${hours[i]}:00
+                </div>
+                <textarea class='col-md-8 description'>
+                </textarea>
+                <button class='col-md-2 saveBtn'>
+                <i class='fas fa-save'></i>
+                </button>
+            </div>
+        </form>
+        `);
+        containerEl.append(block);
+        
+    }
 }
 
 
@@ -118,3 +138,4 @@ function createTimeBlocks() {
 // ---------------------------------//
 
 setDay();
+createTimeBlocks()
