@@ -126,7 +126,6 @@ function assignColor() {
     })
 }
 
-
 // ---------------------------------//
 // ---------------------------------//
 
@@ -146,18 +145,18 @@ $(document).on("submit", "form", function(bananaLULZ) { //note to self bananaLUL
             localStorage.setItem(`savedData ${hourForLocalStorage}`, textInput); //sets local storage for saved data string assigning vlaiue of hour (hourForLocalStorage) for key and textInput as value, overwrites if existing instead of adding new (was getting bug)
         } else {
             //set new value
-            localStorage.setItem(`savedData ${hourForLocalStorage}`, textInput);
+            localStorage.setItem(`savedData ${hourForLocalStorage}`, textInput); //does same but creates new if not already existing
         }
-    console.log(textInput, hourForLocalStorage);
+    console.log(textInput, hourForLocalStorage); //log to check working
 });
 
-function assignStoredText() {
-    const timeBlocks = $(".time-block");
-    for (let i = 0; i < timeBlocks.length; i++) {
-        const hour = $(timeBlocks[i]).find(".hour").text();
-        const storedText = localStorage.getItem("savedData " + hour);
-        const textarea = $(timeBlocks[i]).find("textarea[name='textInput']");
-        textarea.val(storedText);
+function assignStoredText() { //creates function to assign stored text to textarea when page loads
+    const timeBlocks = $(".time-block"); //selects all elements with class time-block as const, so all that were created previously
+    for (let i = 0; i < timeBlocks.length; i++) { //initiate for loop using timeBlocks array created at begining starting at 0 index
+        const hour = $(timeBlocks[i]).find(".hour").text(); //creates const for each hour gets timeblock we're currently on thorugh index, finds hour class and gets text
+        const storedText = localStorage.getItem("savedData " + hour); // sets const for local storage by gettng hour specifically from object saved in local storage
+        const textarea = $(timeBlocks[i]).find("textarea[name='textInput']"); //takes timbelock we're on with index, looking specifiaclly at the individual text area, finds it and makes sure it's named textInput
+        textarea.val(storedText);//takes that value and assigns it to the textarea from local storage so saved local storage displays on screen in relevant place "text area" when page loaded
     }
 }
 
@@ -165,7 +164,7 @@ function assignStoredText() {
 // ---------------------------------//
 // ---------------------------------//
 
-setDay();
-createTimeBlocks();
-assignColor();
-assignStoredText();
+setDay(); //sets day in header using dayjs thorugh calling function
+createTimeBlocks(); //creates timeblocks through calling function looping through hours and assigning all same html for each individual hour
+assignColor(); //adds class to give color to timeblocks depending on if past, present, or future
+assignStoredText(); //calls function to assign stored text to textarea when page loads
