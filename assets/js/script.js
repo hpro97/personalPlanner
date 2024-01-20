@@ -131,17 +131,13 @@ function assignColor() {
 // ---------------------------------//
 
 // ---------------------------------//
-//click events
+//click events & local storage
 // ---------------------------------//
-// ---------------------------------//
-//local storage
-// ---------------------------------//
-
 $(document).on("submit", "form", function(bananaLULZ) { //note to self bananaLULZ could be anything, intuitively submit would be ideal, but to remember it can be anything, i've set to bananaLULZ 🍌
-    bananaLULZ.preventDefault();
+    bananaLULZ.preventDefault();// prevents relaoding of page on form submission
     //save text of #textInput to local storage for each timeblock
-    let textInput = $(bananaLULZ.target).find("textarea[name='textInput']").val().trim();
-    let hourForLocalStorage = $(bananaLULZ.target).find(".hour").text();
+    let textInput = $(bananaLULZ.target).find("textarea[name='textInput']").val().trim(); //target is bananaLULZ, so the submit, finds a text area with atrribute name textInput, and gets the value, trims whitespace
+    let hourForLocalStorage = $(bananaLULZ.target).find(".hour").text();//see above
     //check if there is already data for this hour in local storage
     let existingData = localStorage.getItem(`savedData ${hourForLocalStorage}`);
         //f there is existing data
