@@ -52,7 +52,7 @@ containerEl = $(".container") //div dispalys container for timeblocks
 //define initial variables that change through app//
 // ---------------------------------//
 let hours = [
-    07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18
+    07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18,
 ]
 
 
@@ -122,6 +122,19 @@ function createTimeBlocks() {
     }
 }
 
+function assignColor() {
+    //color code grey done, red current, green future
+    $(".time-block").each(function(i, block) {
+        if (hours[i] < currentDay.hour()) {
+            $(this).addClass("past");
+        } else if (hours[i] === currentDay.hour()) {
+            $(this).addClass("present");
+        } else if (hours[i] > currentDay.hour()) {
+            $(this).addClass("future");
+        }
+    })
+}
+
 
 // ---------------------------------//
 // ---------------------------------//
@@ -139,3 +152,4 @@ function createTimeBlocks() {
 
 setDay();
 createTimeBlocks()
+assignColor();
