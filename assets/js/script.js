@@ -89,7 +89,8 @@ function setDay() {
     //set current day in header
     //use dayjs for this
     //append current day to header
-$("#currentDay").text(currentDay.format("dddd d MMMM YYYY"));
+$(currentDayEl).text(currentDay.format("dddd d MMMM YYYY"));
+//no need to append with jquery
 }
 
 function createTimeBlocks() {
