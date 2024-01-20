@@ -139,11 +139,11 @@ $(document).on("submit", "form", function(bananaLULZ) { //note to self bananaLUL
     let textInput = $(bananaLULZ.target).find("textarea[name='textInput']").val().trim(); //target is bananaLULZ, so the submit, finds a text area with atrribute name textInput, and gets the value, trims whitespace
     let hourForLocalStorage = $(bananaLULZ.target).find(".hour").text();//see above
     //check if there is already data for this hour in local storage
-    let existingData = localStorage.getItem(`savedData ${hourForLocalStorage}`);
+    let existingData = localStorage.getItem(`savedData ${hourForLocalStorage}`);//sets local storage for saved data string assigning vlaiue of hour (hourForLocalStorage)
         //f there is existing data
-        if (existingData) {
+        if (existingData) { //checks stored
             //updte existing data
-            localStorage.setItem(`savedData ${hourForLocalStorage}`, textInput);
+            localStorage.setItem(`savedData ${hourForLocalStorage}`, textInput); //sets local storage for saved data string assigning vlaiue of hour (hourForLocalStorage) for key and textInput as value, overwrites if existing instead of adding new (was getting bug)
         } else {
             //set new value
             localStorage.setItem(`savedData ${hourForLocalStorage}`, textInput);
