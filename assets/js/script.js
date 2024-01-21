@@ -88,17 +88,18 @@ function createTimeBlocks() {
         const block = //indiviul const for each block
         $(`<form>
             <div class='row time-block'>
-                <div class='col-md-2 hour'>
+                <div class='col-2 hour'>
                     ${hours[i]}:00
                 </div>
-                <textarea class='col-md-8 description textInput' name='textInput'>
+                <textarea class='col-8 description textInput' name='textInput'>
                 </textarea>
-                <button class='col-md-2 saveBtn' type='submit'>
+                <button class='col-2 saveBtn' type='submit'>
                 <i class='fas fa-save'></i>
                 </button>
             </div>
         </form>
         `);
+        
 
         //form for each block, creates row, in row creates col for hour, textarea for description, and button for save
         //creates column occupying 2 spaces of the 12, assigns hour class
