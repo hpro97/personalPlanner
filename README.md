@@ -16,8 +16,8 @@ I built this project to implement new technologies I've learned, such as using l
 ## Links
 
 * **Deployed:** [Personal Planner](https://hpro97.github.io/personalPlannerChallenge7HarryProbert/)
-* **GitHub Repo:** [Challenge 7 Personal Planner](https://github.com/hpro97/challenge7PersonalPlannerHarryProbert)
-* **JavaScript File:** [assets/js](https://github.com/hpro97/challenge7PersonalPlannerHarryProbert/tree/main/assets/js)
+* **GitHub Repo:** [Challenge 7 Personal Planner](https://github.com/personalPlannerChallenge7HarryProbert)
+* **JavaScript File:** [assets/js](https://github.com/hpro97/personalPlannerChallenge7HarryProbert/tree/main/assets/js)
 
 ## Screenshot
 
